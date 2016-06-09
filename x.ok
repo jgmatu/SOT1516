@@ -1,0 +1,118 @@
+/* Modificacion  psot.c en SOT1516 : cd ... cd a ... si a no existe pruebo a cambiar a a.dir */
+		if (timeout){
+	if (newtest == NULL)
+	if ((fd = dup2(fd , 0)) < 0){
+	if ((fd = dup2(fd , 1)) < 0){
+	if ((fd = dup2(fd , 2)) < 0){
+	if (fdnull < 0){
+	if ((fdnull = dup2(fd , fdnull)) < 0){
+	if (fp == NULL)
+		if (tokens[i] != NULL)
+		if (*sep == c)
+		if (!is_carater_sep(*str , sep) && !enpal){
+		if (is_carater_sep(*str , sep) && enpal){
+		if ( *(parameters[pos]) == '$') return pos;
+	if (getenv(env) != NULL)  {
+	if ((found = envname(parameters)) != -1) {
+	if (found == 0)
+		if (cmdpath == NULL)
+		if (!endpath(cmdpath))
+	if (savepath == NULL) {
+	if (savepath == NULL) {
+	if (chdir(path) < 0) {
+		if (nr == 0)
+		if (nr < 0){
+		if (nw != nr) {
+	if (pipe(fdpipe) == -1){
+		if (stdin_to_fd(cmdpipe->readLastPipe) < 0)
+		if (stdout_to_fd(fdpipe[1]) < 0)
+		if (close(fdpipe[0]) < 0)
+		if (exec_cmd(cmdpipe->cmd , cmdpipe->parameters) < 0)
+		if (close(fdpipe[1]) < 0) {
+ * Comeback direcotry cunit dir, if we chage the directory
+	if (pwdcunit) {
+		if (chdir(pwdcunit) < 0){
+	if (cmdpipe == NULL){
+	if ((pid = waitpid(pidLast , &status , 0)) != -1) {
+		// Wait for childrens if errors in process are by commands process failed...
+		if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
+	if (fp == NULL) return -1;
+	if (cmdpipe == NULL) return -1;
+	if (line == NULL) {
+		if (cmdpipe->numpars == 0)
+		if (!iscd(cmdpipe->cmd , numLinecmd)){
+			if((pidLast = cmd_line_pipe(cmdpipe)) < 0)
+			if ((pwdcunit = changeDir(cmdpipe->parameters[1])) == NULL)
+	if (!numLinecmd) {
+	if (chdirpwd(pwdcunit) < 0) return -1;
+	if (outputest(fdOut , cmdpipe->readLastPipe) < 0) return -1;
+	if (stat(file , &sb) < 0) {
+		if (strcmp(test , files->files[pos]) == 0)
+	if ((fd = open(test , O_RDONLY)) < 0){
+		if (nr < 0) {
+		if (nr == 0)
+		if ((*str = realloc(*str , size)) == NULL) {
+		if (strncat(*str , buffer , nr) == NULL){
+	if (fileToStr(testok , &strOk) < 0)
+	if (fileToStr(testout , &strOut) < 0)
+	if (strcmp(strOk , strOut) == 0)
+	if (strOk == NULL && strOk == NULL)			/* Empty files */
+	if ((fdOk = creat(testok , 0600)) < 0){
+	if ((fdOut = open(testout , O_RDONLY)) < 0){
+		if (nr < 0) {
+		if (nr == 0)
+		if (nw != nr) {
+	if (is_test_in_files(files , testok)) {
+		if ((sames = comparetest(testout , testok)) < 0)
+		if (createok(testok , testout) < 0)
+		if (fd_to_devnull(0) < 0)
+		if ((fdOut = creat(testout , 0600)) < 0)
+		if ((fdOut = stdout_to_fd(fdOut)) < 0)
+		if ((fdOut = stderr_to_fd(fdOut)) < 0)
+		if ((cmdfailed = exectest(test , fdOut)) < 0)
+		if (!cmdfailed)
+		if (close(fdOut) < 0) {
+		if (cmdfailed || !sames)
+		if (pidstests[pos].pid == pid) {
+	if (files == NULL) return NULL;
+	if (files->files[files->numfiles] == NULL)
+	if (pidstests == NULL || files == NULL) {
+	if ((directory = opendir(path)) == NULL) {
+	// Take files and save for compare test.ok if is there in directory.
+		if (is_ext_basic_test(rdirectory->d_name) && isregfile(rdirectory->d_name))
+		if (isext(files->files[i] , EXTTST)) {
+			if ((pid = launchtest(test , files , timeout)) < 0) {
+		if (WIFEXITED(status) && WEXITSTATUS(status) != 0) {
+	if ((directory = opendir(path)) == NULL){
+		if (is_ext_clean(rdirectory->d_name) && isregfile(rdirectory->d_name)) {
+			if (unlink(rdirectory->d_name) < 0) {
+		if ((fdOut = creat(testout , 0600)) < 0) {
+		if (stdout_to_fd(fdOut) < 0)
+		if (stderr_to_fd(fdOut) < 0)
+		if (close(fdOut) < 0)
+		if (exec_cmd(cmd , parameters) < 0)
+		if ((pid = wait(&status)) != -1)
+			if (WIFEXITED(status) && WEXITSTATUS(status) == 0)
+	if (fp == NULL) return -1;
+	if (( line = malloc(MAXLINE) ) == NULL) {
+		if ((condsuccess = cmd_cond(testcond , cmd , parameters , timeout)) < 0)
+	if (condsuccess)
+	if (!condsuccess)
+	if (files == NULL) return -1;
+	if ((directory = opendir(path)) == NULL)
+		if (is_ext_cond(rdirectory->d_name) && isregfile(rdirectory->d_name)) {
+		if (isext(files->files[i] , EXTCOND)) {
+			if ((condsuccess = testcond(test , files , timeout)) < 0)
+		if (!isdigit(*text))
+		if (strcmp(*argv , "-c") == 0)
+		if (strcmp(*argv , "-t") == 0)
+	if (argc > 0) {
+		if (areincompatibles(argv)) {
+		if (argc == 1 && strcmp(argv[0] , "-c") == 0){
+			if (cunitclean(path) < 0)
+		if (argc == 2 && strcmp(argv[0] , "-t") == 0 && aredigits(argv[1])) {
+		if (!istimeout) {
+	if ((cunitfailed = cunit_basic_test(path , timeout)) < 0)
+	if ((condsuccess = cunitcond(path , timeout)) < 0)
+  	// Optional cond success and basic cunit. if you wanna execute basic alone
+	if (cunitfailed  || !condsuccess)

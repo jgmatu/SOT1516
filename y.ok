@@ -1,0 +1,25 @@
+	for (i = 0 ; i < maxargs ; ++i)
+	for (i = 0 ; i < numtoks ; ++i){
+		// Look for $envname in parameters of comand line and change for
+	/* Look for in path the command */
+	for (i = 0 ; i < numpath ; i++){
+	for (;;) {
+	switch (pid = fork()){
+	/* Parent pid child process return by fork and pipe to write must be closed in parent process */
+			// Wait for childrens if errors in process are by commands process failed...
+			  // Errors only for launch process Operating System calls...
+			  // Errors only for change directory Operating System calls...
+	for (;;) {
+	for (;;) {
+	switch (pid = fork()) {
+		fprintf(stderr , "Error launch fork process test... %s error...%s\n" , test , strerror(errno));
+	for (i = 0 ; i < numtests ; i++) {
+	for (i = 0; i < numfiles ; i++)
+	/* Take files and save for compare test.ok if is there in directory */
+	for (i = 0 ; i < files->numfiles ; i++) {
+				fprintf(stderr, "Error launch test process on system call fork... %s\n" , files->files[i]);
+	/* Wait for childrens tests.tst of cunit.c*/
+	switch(pid = fork()){
+		fprintf(stderr, "Error create fork %s\n", strerror(errno));
+		/* launch line command and wait results before launch the next command*/
+	for (i = 0 ;  i < files->numfiles ; i++) {
