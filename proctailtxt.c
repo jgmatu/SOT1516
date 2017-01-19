@@ -63,10 +63,12 @@ freeresources (int fd , int fdout , char *file , char *outfile)
 		fprintf(stderr, "error close file : %s : %s\n", file , strerror(errno));
 		errors = -1;
 	}
+	
 	if (!(fdout < 0) && close(fdout) < 0){
 		fprintf(stderr, "error close file : %s : %s\n", outfile , strerror(errno));
 		errors = -1;
 	}
+	
 	free(file);
 	free(outfile);
 	return errors;
@@ -146,16 +148,20 @@ void
 initfiles (char **file)
 {
 	int i;
-	for (i = 0 ; i < MAXFILES ; i++)
+	
+	for (i = 0 ; i < MAXFILES ; i++) {
 		file[i] = NULL;
+	}
 }
 
 void
 printfiles (char **file , int numfiles)
 {
 	int i;
-	for (i = 0 ; i < numfiles  ; i++)
+	
+	for (i = 0 ; i < numfiles  ; i++) {
 		printf("%s\n", file[i]);
+	}
 }
 
 int
@@ -163,8 +169,8 @@ createchilds (char **file , int numfiles)
 {
 	int pid = 0 , errors = 0 , status = 0 , i;
 	/* Launch Childrens */
-	for (i = 0 ; i < numfiles ; i++){
-		switch (pid = fork()){
+	for (i = 0 ; i < numfiles ; i++) {
+		switch (pid = fork()) {
 			case -1: /* Error launch children (clone) */
 				fprintf(stderr, "failed create child %s\n", strerror(errno));
 				errors = -1;
@@ -178,7 +184,7 @@ createchilds (char **file , int numfiles)
 		}
 	}
 	/* Wait for childrens */
-	for (i = 0 ; i < numfiles ; i++){
+	for (i = 0 ; i < numfiles ; i++) {
 		pid = wait(&status);
 		if (pid < 0){
 			fprintf(stderr, "failed called to wait %s\n", strerror(errno));
@@ -201,24 +207,25 @@ listdir(char *path)
 	char *file[MAXFILES];
 
 	dir = opendir(path);
-	if (dir == NULL){
+	if (dir == NULL) {
 		fprintf(stderr, "Error open dir %s\n", strerror(errno));
 		exit(1);
 	}
 	/* List dir and get name files .txt */
-	while ((inputdir = readdir(dir)) != NULL && numfile <= MAXFILES)
+	while ((inputdir = readdir(dir)) != NULL && numfile <= MAXFILES) {
 		if (esfichero(inputdir->d_name) && esfintxt(inputdir->d_name)){
 			file[numfile] = strdup(inputdir->d_name);
 			++numfile;
 		}
+	}
 		
 	/* Launch chils for each .txt else return -1 if MAXFILES */
-	if (numfile > MAXFILES){
+	if (numfile > MAXFILES) {
 		fprintf(stderr, "Error program maxfiles\n");
 		return -1;
-	}else
+	} else {
 		errors = createchilds(file , numfile);
-
+	}
 	closedir(dir);
 	return errors;
 }
@@ -227,11 +234,13 @@ int
 notdigits (char *digits)
 {
 	int result = 0;
-	while (*digits != 0 && !result)
-		if (isdigit(*digits)) 
+	while (*digits != 0 && !result) {
+		if (isdigit(*digits)) { 
 			++digits;
-		else 
+		} else {
 			result = 1;
+		}
+	}
 	return result;
 }
 
