@@ -1,2 +1,3 @@
 # SOT1516
-malo
+
+This is my Operating System practice at the College.
